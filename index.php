@@ -35,7 +35,7 @@ else {
             <h1 class="heading-main">Lokalita <?php echo $lokalita; ?></h1>
             <div class="form-container">
                 <form action="" method="GET" class="select-form">
-                <select name="lokalita" id="select" onchange="document.querySelector('.select-form').submit()">
+                <select name="lokalita" class="select" onchange="document.querySelector('.select-form').submit()">
                     <?php 
                         $query = "SELECT lokalita FROM senzory GROUP BY lokalita";
                         $result = mysqli_query($conn, $query);

@@ -8,12 +8,16 @@ if(isset($_SESSION['authenticated'])){
 
 if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, trim($_POST['email']));
-    $query = "SELECT id, heslo FROM users WHERE email=\"$email\" LIMIT 1";
+    $query = "SELECT users.id AS id, heslo, nazov FROM users
+    JOIN role ON users.rola_id = role.id
+    WHERE email=\"$email\" 
+    LIMIT 1";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result)) {
         $row = mysqli_fetch_assoc($result);
-        if(trim($_POST['password']) == $row['heslo']){
+        if(mysqli_real_escape_string($conn, trim($_POST['password'])) == $row['heslo']){
             $_SESSION['authenticated'] = $row['id'];
+            $_SESSION['role'] = $row['nazov'];
             header("Location: index.php");
         }
         else {

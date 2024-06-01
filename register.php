@@ -20,7 +20,9 @@ if(isset($_POST['submit'])){
     $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     $meno = mysqli_real_escape_string($conn, trim($_POST['meno']));
     $heslo = mysqli_real_escape_string($conn, trim($_POST['password']));
-    $role = trim($_POST['role']);
+    $query = "SELECT id FROM role WHERE nazov=\"občan\" LIMIT 1";
+    $result = mysqli_query($conn, $query);
+    $role = mysqli_fetch_assoc($result)['id'];
     if ($_POST['password'] !== $_POST['repeatedPassword']) {
         $error = "Heslo sa nezhoduje";
     }
@@ -63,17 +65,6 @@ if(isset($_POST['submit'])){
             </div>
             <div class="form-container">
                 <input type="password" class="auth-form-input input" name="repeatedPassword" placeholder="Zopakujte heslo" required>
-            </div>
-            <div class="form-container radio-container">
-                <?php 
-                $query = "SELECT * FROM role";
-                $result = mysqli_query($conn, $query);
-                while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class="radio-group">
-                        <input checked type="radio" class="input" name="role" id="<?php echo $row['nazov']; ?>" value="<?php echo $row['id']; ?>">
-                        <label for="<?php echo $row['nazov']; ?>"><?php echo ucfirst($row['nazov']); ?></label>
-                    </div>    
-                <?php } ?>           
             </div>
             <div class="form-container">
                 <?php if (isset($error)) {

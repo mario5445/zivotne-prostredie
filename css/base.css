@@ -31,7 +31,7 @@ a {
   color: inherit;
 }
 
-@media screen and (min-width: 2200px) {
+@media screen and (min-width: 1900px) {
   html {
     font-size: 80%;
   }
