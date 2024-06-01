@@ -1,0 +1,38 @@
+.chart-and-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-left {
+  flex-basis: 70%;
+}
+
+.main-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.settings-heading {
+  margin-bottom: 2rem;
+}
+
+#kategoria {
+  font: inherit;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 3px;
+}
+
+.setting-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-group {
+  display: flex;
+  gap: 2rem;
+}

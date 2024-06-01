@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 3rem;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  font-size: 2.5rem;
+}
+
+.nav-item {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--font-color);
+    bottom: -30%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  &:hover {
+    overflow: visible;
+  }
+}
+
+.login-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.name {
+  font-weight: 200;
+}

@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #222831;
+  --secondary-color: #393e46;
+  --tertiary-color: #00adb5;
+
+  --font-color: #eeeeee;
+  --btn-color-hover: #06979e;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width: 2200px) {
+  html {
+    font-size: 80%;
+  }
+}

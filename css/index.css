@@ -1,0 +1,21 @@
+.main-content--left {
+  flex-basis: 55%;
+}
+
+.main-content--right {
+  flex-grow: 1;
+}
+
+.main-content--right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 3rem;
+  font-size: 3rem;
+}
+
+.info {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
