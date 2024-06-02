@@ -101,8 +101,6 @@ else {
             </div>
         </div>   
     </main>
-    <footer>
-        <div>2024 Made by Mário Lastovica</div>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

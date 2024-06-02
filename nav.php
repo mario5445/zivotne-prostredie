@@ -10,7 +10,8 @@
         <div class="name"><?php echo $row['meno']; ?></div>
         <div class="nav-item"><a href="detail.php">Podrobné dáta</a></div>
         <?php if ($_SESSION['role'] === 'admin') { ?>
-        <div class="nav-item"><a href="users.php">Užívatelia</a></div>
+            <div class="nav-item"><a href="users.php">Užívatelia</a></div>
+            <div class="nav-item"><a href="sensors.php">Senzory</a></div>
         <?php } ?>
         <form action="logout.php" class="logout-form" method="POST">
             <div class="logout nav-item">
